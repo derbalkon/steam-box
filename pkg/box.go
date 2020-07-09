@@ -79,7 +79,7 @@ func (b *Box) GetPlayTime(ctx context.Context, steamID uint64, appID ...uint32) 
 		mins := int(math.Floor(float64(game.PlaytimeForever % 60)))
 
 		line := pad(getNameEmoji(game.Appid, game.Name), " ", 35) + " " +
-			pad(fmt.Sprintf("🕘 %d hrs %d mins", hours, mins), "", 16)
+			pad(fmt.Sprintf("%d hrs %d mins", hours, mins), "", 16)
 		lines = append(lines, line)
 		max++
 	}
@@ -98,11 +98,13 @@ func pad(s, pad string, targetLength int) string {
 func getNameEmoji(id int, name string) string {
 	// hard code some game's emoji
 	var nameEmojiMap = map[int]string{
-		730:    "🔫 ", // CS:GO
-		271590: "🚓 ", // GTA 5
+		730:    "🔑 ", // CS:GO
+		271590: "🚔 ", // GTA 5
 		578080: "🍳 ", // PUBG
-		431960: "💻 ", // Wallpaper Engine
-		8930:   "🌏 ", // Sid Meier's Civilization V
+		250900: "😭 ", // The Binding of Isaac: Rebirth
+		322170: "👾 ", // Geometry Dash
+		204360: "🏰 ", // Castle Crashers
+		238460: "🎩 ", // BattleBlock Theater
 	}
 
 	if emoji, ok := nameEmojiMap[id]; ok {

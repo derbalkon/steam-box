@@ -37,7 +37,7 @@ func main() {
 		panic("GetPlayTime err:" + err.Error())
 	}
 
-	filename := "🎮 Steam playtime leaderboard"
+	filename := "steamPlaytime"
 	gist, err := box.GetGist(ctx, gistID)
 	if err != nil {
 		panic("GetGist err:" + err.Error())
