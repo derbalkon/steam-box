@@ -79,7 +79,7 @@ func (b *Box) GetPlayTime(ctx context.Context, steamID uint64, appID ...uint32) 
 		mins := int(math.Floor(float64(game.PlaytimeForever % 60)))
 
 		line := pad(getNameEmoji(game.Appid, game.Name), " ", 35) + " " +
-			pad(fmt.Sprintf("%d h %d min", hours, mins), "", 16)
+			pad(fmt.Sprintf("%dh %dmin", hours, mins), "", 16)
 		lines = append(lines, line)
 		max++
 	}
